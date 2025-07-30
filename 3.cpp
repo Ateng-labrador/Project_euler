@@ -6,7 +6,7 @@ std::vector<long long> prime_factor(long long n){
     for(int i=2;i<100000;i++){
         if(n % i == 0){
             result.push_back(i);
-            n /= i;
+            n /= i; //untuk mencari faktorisasi prima
         }
     }
     return result;
