@@ -2,6 +2,34 @@
 #include <vector>
 #include <cmath>
 
+bool is_prime(int n){
+    if(n<2){
+        return false;
+    }
+    for(int i=2;i<=sqrt(n);i++){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+int list_number(int y){
+    int x = 1;
+    int count = 0;
+    for(int i=0;count<y;x++){
+        if(is_prime(x)){
+            count++;
+        }
+    }
+    return x-1;
+}
+
+int main(){
+    std::cout<<list_number(10001)<<std::endl;
+    return 0;
+}
+
 // std::vector<int> prime_number(int n){
 //     std::vector<bool> is_prime(n+1,true);
 //     for(int i=2;i<=sqrt(n);i++){
@@ -34,32 +62,3 @@
     // }
 
 // 104743
-
-bool is_prime(int n){
-    if(n<2){
-        return false;
-    }
-    for(int i=2;i<=sqrt(n);i++){
-        if(n % i == 0){
-            return false;
-        }
-    }
-    return true;
-}
-
-int list_number(int y){
-    int x = 1;
-    int count = 0;
-    for(int i=0;count<y;x++){
-        if(is_prime(x)){
-            count++;
-        }
-    }
-    return x-2;
-}
-
-
-int main(){
-    std::cout<<list_number(10001)<<std::endl;
-    return 0;
-}
