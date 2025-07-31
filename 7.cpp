@@ -47,16 +47,19 @@ bool is_prime(int n){
     return true;
 }
 
-
-int main(){
+int list_number(int y){
     int x = 1;
     int count = 0;
-    for(int i=0;count<10001;x++){
+    for(int i=0;count<y;x++){
         if(is_prime(x)){
             count++;
         }
     }
+    return x-2;
+}
 
-    std::cout<<x-1<<std::endl;
+
+int main(){
+    std::cout<<list_number(10001)<<std::endl;
     return 0;
 }
