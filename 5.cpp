@@ -24,6 +24,10 @@ using ll = long long;
 //     return res;
 // }
 
+// KPK adalah mengambil faktor prima dari dua(atau lebih) bilangan
+// dan utnuk setiap faktor prima ,ambil pangkat tertinggi (yang terbesa)
+
+
 // berapa kali  bilang prima itu muncul?
 
 std::map<int,int> faktorisasi_prima(int n){
@@ -64,12 +68,23 @@ ll hitung_kpk(const std::map<int,int>&faktor){
     return kpk;
 }
 
-int main(){
-    std::map<int,int> faktor_kpk = faktorisasi_kpk(10);
 
-    for(auto&[prima,pangkat]:faktor_kpk){
+int main(){
+    // std::map<int,int> faktor_kpk = faktorisasi_kpk(10);
+
+    // for(auto&[prima,pangkat]:faktor_kpk){
+    //     std::cout<<prima<<" "<<pangkat<<std::endl;
+    // }
+
+    // std::cout<hitung_kpk(faktor_kpk);
+
+    // std::map<int,int> search_prima = faktorisasi_prima(10);
+    // for(auto &[prima,pangkat]:search_prima){
+    //     std::cout<<prima<<" "<<pangkat<<std::endl;
+    // }
+
+    std::map<int,int> A = faktorisasi_prima(8);
+    for(auto &[prima,pangkat]:A){
         std::cout<<prima<<" "<<pangkat<<std::endl;
     }
-
-    std::cout<hitung_kpk(faktor_kpk);
 }
