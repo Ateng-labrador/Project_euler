@@ -1,5 +1,4 @@
 function fibonanci(x)
-    v = Int[]
     if x <= 1
         return x
     else
@@ -7,4 +6,13 @@ function fibonanci(x)
     end
 end
 
-println(fibonanci(10))
+
+# fibonanco list
+function fibonanci_list(x)
+    v = Int[0,1]
+    for i in 3:x
+        push!(v,v[i-1]+v[i-2])
+    end
+    return v
+end
+println(fibonanci_list(10))
