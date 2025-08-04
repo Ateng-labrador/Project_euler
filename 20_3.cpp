@@ -2,11 +2,10 @@
 #include <string>
 
 void product(std::string& str,int N){
-    int len = str.size();
     int reminder = 0;
-    for(int i=0;i<len;i++){
-        int temp = (str[len-1-i]-'0')*N+reminder;
-        str[len-1-i] = char(temp%10 + '0');
+    for(int i=0;i<str.size();i++){
+        int temp = (str[str.size()-1-i]-'0')*N+reminder;
+        str[str.size()-1-i] = char(temp%10 + '0');
         reminder = temp/10;
     }
     if(reminder){

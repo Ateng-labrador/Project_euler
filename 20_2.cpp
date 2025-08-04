@@ -15,8 +15,6 @@ std::vector<int> factorial(int n){
     for(int x=2;x<=n;x++){
         res_size = multiply(x,res,res_size);
     }
-
-    // karna res punya kapasitas yang tetap
     return std::vector<int>(res.begin(),res.begin()+res_size);
 }
 
@@ -28,11 +26,6 @@ turner sum_factorial(const std::vector<int>&res){
     return result;
 }
 
-void print(const std::vector<int>&res){
-    for(int i=res.size()-1;i>=0;i--){
-        std::cout<<res[i];
-    }
-}
 
 int multiply(int x,std::vector<int>&res,int res_size){
     int carry = 0;
@@ -52,5 +45,12 @@ int multiply(int x,std::vector<int>&res,int res_size){
 int main(){
     std::vector<int>A = factorial(100);
     std::cout<<sum_factorial(A)<<std::endl;
-    print(A);
+    
 }
+
+
+// void print(const std::vector<int>&res){
+//     for(int i=res.size()-1;i>=0;i--){
+//         std::cout<<res[i];
+//     }
+// }
