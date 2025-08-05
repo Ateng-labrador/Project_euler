@@ -11,16 +11,27 @@ feast power(int n){
     return res;
 }
 
-feast power_int(const feast &res){
+feast power_int(feast &res){
     feast resulst = 0;
-    std::string x = std::to_string(res);
-    for(char c:x){
-        feast digit = c - '0';
-        resulst += digit;
+    while (res){
+        int reminder = (res % 10);
+        res /= 10;
+        resulst += reminder;
     }
     return resulst;
 }
 
+feast power_init_1(const feast&res){
+    feast result = 0;
+    std::string c = std::to_string(res);
+    for(char x:c){
+        feast digit = x - '0';
+        result += digit;
+    }
+    return result;
+}
+
 int main(){
-    std::cout<<power_int(power(1000))<<std::endl;
+    feast x = power(15);
+    std::cout<<power_int(x)<<std::endl;
 }
