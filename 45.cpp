@@ -2,42 +2,72 @@
 #include <vector>
 using turner = long long;
 
-turner Triangle(int n){
-    turner Tri = n*(n+1)/2;
-    return Tri;
+turner Triangle(turner n){
+    return n*(n+1)/2;
 }
 
-turner hexagonal(int n){
-    turner H = n*(3*n-1)/2;
-    return H;
+turner pentagona(turner n){
+    return n*(3*n-1)/2;
 }
 
-turner pentagona(int n){
-    turner P = n*(2*n-1);
-    return P;
+turner hexagonal(turner n){
+    return n*(2*n-1);
 }
 
-std::vector<turner> size(int n){
-    std::vector<turner> res;
-    for(int i=1;i<=n;i++){
-        turner t = Triangle(i);
-        for(int j=i;j<=n;j++){
-            turner h = hexagonal(j);
-            if(t != h){
-                continue;
-            }
-            for(int z=j;z<=n;z++){
-                turner p = pentagona(z);
-                if(h==p){
-                    res.push_back(t);
-                }
-            }
-        }
-    }
-    return res;
-}
+// std::vector<turner> size(turner i,turner j,turner k){
+//     std::vector<turner> res;
+//     turner t , p  , h ;
+//     t = Triangle(i);
+//     p = pentagona(j);
+//     h = hexagonal(k);
 
+//     while(t != p || t != h){
+//         if(t < h && t < p){
+//             ++i;
+//             t = Triangle(i);
+//         }
+//         else if(p < h){
+//             ++j;
+//             p = pentagona(j);
+//         }
+//         else{
+//             ++k;
+//             h = hexagonal(k);
+//         }
+//     }
+//     res.push_back(t);
+//     return res;
+// }
+
+// void result(const std::vector<turner>&res){
+//     for(auto x:res){
+//         std::cout<<x<<std::endl;
+//     }
+// }
 
 int main(){
+    turner i , j , k ,t , p , h;
+    i = 286;
+    j = 166;
+    k = 144;
 
+    t = Triangle(i);
+    p = pentagona(j);
+    h = hexagonal(k);
+
+    while(t != p || t != h){
+        if(t<h && t<p){
+            ++i;
+            t = Triangle(i);
+        }
+        else if(p < h){
+            ++j;
+            p = pentagona(j);
+        }
+        else{
+            ++k;
+            h = hexagonal(k);
+        }
+    }
+    std::cout<<t<<std::endl;
 }
