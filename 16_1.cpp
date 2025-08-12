@@ -1,13 +1,16 @@
 #include <iostream>
 #include <cstdint>
 
-uint32_t power(int n){
-    uint32_t res = 1;
-    for(int i=1;i<=n;++i){
-        res *= 2;
-    }
-    return res;
-}
+uint32_t NUM_CELLS = 251;
+uint8_t cells[NUM_CELLS];
+
+// uint32_t power(int n){
+//     uint32_t res = 1;
+//     for(int i=1;i<=n;++i){
+//         res *= 2;
+//     }
+//     return res;
+// }
 
 uint32_t sum(uint32_t res){
     uint32_t sum = 0;
@@ -51,7 +54,7 @@ Suppose we have a binary number
 
 Another posibble is base 16(hexdecuaml)
 
-why do we like base 16?
+why do we like base 16?b
 1) we can easliy convert from binary
 2) much more compact that binary
 
@@ -60,6 +63,20 @@ why do we like base 16?
 2^1000?
 
 in binary 2^1000 is just a 1 followed by 1000 zeroes
-in hex therefore,2^1000 is just a 1 followed by zeroes
+in hex therefore,2^1000 is just a 1 followed by 250 zeroes
+
+1 2 3 4 5 6 7 8 9 A B C D E F
+
+how do we represent digits larger than 9 in hex?
+10 -> A
+11 -> B
+12 -> C
+13 -> D
+14 -> E
+15 -> F
+
+
 
 */
+
+
